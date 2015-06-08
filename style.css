@@ -105,8 +105,12 @@ a:active {color:inherit;}  /* selected link */
 }
 .indentedBlock{
 	padding-left: 25px;
+	border-left: 1px solid green;
 }
-
+.inlineCodeBlock{
+	border: 1px solid;
+  	padding: 7px;
+}
 
 
 

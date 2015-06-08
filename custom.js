@@ -10,8 +10,10 @@ $(document).ready(function(){
 	        range.deleteContents(); 
 	        var newBlock = document.createElement(element);
 	        newBlock.className = className;
+	        newBlock.setAttribute("contentEditable","true");
 	        var blockText = document.createTextNode("This is a new code block");
 	        var afterBlock = document.createElement('p');
+	        afterBlock.setAttribute("contentEditable","true");
 	        afterBlock.className = 'afterBlock';
 	        newBlock.appendChild(blockText);
 	        range.insertNode(newBlock);
@@ -21,6 +23,27 @@ $(document).ready(function(){
 	        sel.addRange(range); 
         }       
     }
+
+    function appendNodeToParentIndent(){
+    	var sel, range, html;
+    	sel = window.getSelection();
+        range = sel.getRangeAt(0);
+        var afterBlock = document.createElement('p');
+        	afterBlock.setAttribute("contentEditable","true");
+	        afterBlock.className = 'afterBlock';
+        if (range.endContainer.parentNode.className.indexOf("indentedBlock") >= 0) {
+        	range.endContainer.parentNode.appendChild(afterBlock);
+        }else{
+	        function inspectNextParent(parentNode){
+	        	if (parentNode.className.indexOf("indentedBlock") >= 0) {
+	        		parentNode.appendChild(afterBlock);
+	        		return;
+	        	};
+	        	inspectNextParent(parentNode.parentNode);
+	        }
+	        inspectNextParent(range.endContainer.parentNode);
+    	}
+    }
    
 
     $('.insertCodeBlock').click(function(){
@@ -29,6 +52,10 @@ $(document).ready(function(){
     $('.indentSection').click(function(){
     	insertBlockAtCursor('div', 'indentedBlock');
     });
+    $('.insertInlineCode').click(function(){
+    	insertBlockAtCursor('span', 'inlineCodeBlock');
+    });
+
 
     // store all notes html to local browser storage
     // store data on keyup, with debounce (only run after x milisec. of no keyups)
