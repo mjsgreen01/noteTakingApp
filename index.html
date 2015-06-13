@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="initial-scale=1">
 		
+		<link href='http://fonts.googleapis.com/css?family=Merriweather:300,400italic,400,900,700,700italic' rel='stylesheet' type='text/css'>
 		<link type="text/css" rel="stylesheet" href="style.css"/>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -14,7 +15,55 @@
 		<title>Note-taking, JG style</title>
 	</head>
 	<body class="homePage">
-		<div class="mainContain">
+		<div id="notepads">
+			<h4>Notepad Titles</h4>
+		</div>
+		<div id="newNotepadContain">
+			<a id="makeNotepad" class="kick-ass button">Make New Notepad</a>
+			<div id="notepadTitleInputContain">
+				<input id="notepadTitleInput" type="text" placeholder="Notepad Title">
+				<a id="createNotepad" href="" class="kick-ass button">Create Notepad</a>
+			</div>
+		</div>
+		<section>
+      
+
+
+
+
+
+<h1 contenteditable="true">A List</h1>
+
+
+
+<ul>
+  <li>    <div title="Click to edit" contenteditable="true">Click to edit.</div>
+    <a title="Complete" class="kick-ass complete-item pill button" href="#">✔</a>
+    <a title="Add item" class="kick-ass new-item pill button" href="#">+</a>
+    <a title="Add sub list" class="kick-ass new-list pill button" href="#">»</a>
+    <a title="Remove" class="kick-ass remove-item pill button" href="#">x</a>
+    <a title="Add code block" class="kick-ass newCodeBlock pill button" href="#"><></a>
+</li>
+  <li>    <div title="Click to edit" contenteditable="true">Create a new list by adding ?YourListName to the URL.</div>
+    <a title="Complete" class="kick-ass complete-item pill button" href="#">✔</a>
+    <a title="Add item" class="kick-ass new-item pill button" href="#">+</a>
+    <a title="Add sub list" class="kick-ass new-list pill button" href="#">»</a>
+    <a title="Remove" class="kick-ass remove-item pill button" href="#">x</a>
+    <a title="Add code block" class="kick-ass newCodeBlock pill button" href="#"><></a>
+</li>
+  <li>    <div title="Click to edit" contenteditable="true">Make a bookmark to have quick access to a list.</div>
+    <a title="Complete" class="kick-ass complete-item pill button" href="#">✔</a>
+    <a title="Add item" class="kick-ass new-item pill button" href="#">+</a>
+    <a title="Add sub list" class="kick-ass new-list pill button" href="#">»</a>
+    <a title="Remove" class="kick-ass remove-item pill button" href="#">x</a>
+    <a title="Add code block" class="kick-ass newCodeBlock pill button" href="#"><></a>
+</li>
+  
+</ul>
+
+<a title="Add item" class="kick-ass new-item button" href="#">+ item</a> 
+    </section>
+		<!-- <div class="mainContain">
 			<div class="toolbar">
 				<input class="insertCodeBlock" type="button" value="Insert Code Block">
 				<input class="indentSection" type="button" value="Indent Section">
@@ -24,6 +73,6 @@
 				<h1>JG's note-taking app</h1>
 				<div>Write Your Notes Here</div>
 			</div>
-		</div>
+		</div> -->
 	</body>
 </html>
